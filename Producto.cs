@@ -9,8 +9,11 @@ namespace Proyecto_Final_Coder2023
 {
     internal class Producto
     {
-        private long id;
-        private string descripciones;
-        private decimal costo;
+        private long Id { get; set;  }
+        private string Descripciones { get; set; }
+        private decimal Costo { get; set; }
+        private decimal PrecioVenta { get; set; }
+        private int Stock { get; set; }
+        private decimal IdUsuario { get; set; }
     }
 }

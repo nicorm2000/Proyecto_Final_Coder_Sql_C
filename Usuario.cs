@@ -7,11 +7,8 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Final_Coder2023
 {
-    internal class Program
+    internal class Usuario
     {
-        static void Main(string[] args)
-        {
-            SqlConnection conn = new SqlConnection();
-        }
+        SqlConnection conn = new SqlConnection();
     }
 }

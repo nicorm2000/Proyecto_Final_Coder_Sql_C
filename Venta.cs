@@ -11,6 +11,6 @@ namespace Proyecto_Final_Coder2023
     {
         public static String cadenaConexion = "Data Source=DESKTOP-PKSDVOQ;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-        SqlConnection conn = new SqlConnection();
+        SqlConnection conn = new SqlConnection(cadenaConexion);
     }
 }

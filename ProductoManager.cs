@@ -12,7 +12,7 @@ namespace Proyecto_Final_Coder2023
     internal static class ProductoManager
     {
         public static String cadenaConexion = "Data Source=DESKTOP-PKSDVOQ;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        public static List<Producto> obtenerProductos()
+        public static List<Producto> ObtenerProductos()
         {
             List<Producto> productos= new List<Producto>();
          
@@ -43,7 +43,7 @@ namespace Proyecto_Final_Coder2023
             }
         }
 
-        public static Producto obtenerProductos(string descripciones)
+        public static Producto ObtenerProductos(string descripciones)
         {
             Producto producto = new Producto();
 
@@ -70,6 +70,23 @@ namespace Proyecto_Final_Coder2023
                 }
 
                 return producto;
+            }
+        }
+
+        public static int InsertarProducto(Producto producto)
+        {
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            {
+                SqlCommand comando = new SqlCommand("INSERT INTO Producto(Descripciones, Costo, PrecioVenta, Stock, IdUsuario)" + "VALUES(@descripciones, @costo, @precioVenta, @stock, @isUsuario)", conn);
+                comando.Parameters.AddWithValue("@descripciones", producto.Descripciones);
+                comando.Parameters.AddWithValue("@costo", producto.Costo);
+                comando.Parameters.AddWithValue("@precioVenta", producto.PrecioVenta);
+                comando.Parameters.AddWithValue("@stock", producto.Stock);
+                comando.Parameters.AddWithValue("@isUsuario", producto.IdUsuario);
+
+                conn.Open();
+
+                return comando.ExecuteNonQuery();
             }
         }
     }

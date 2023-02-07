@@ -11,12 +11,12 @@ namespace Proyecto_Final_Coder2023
 {
     internal static class ProductoManager
     {
-        public static String cadenaConexion = "";
+        public static String cadenaConexion = "Data Source=DESKTOP-PKSDVOQ;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public static List<Producto> obtenerProductos()
         {
             List<Producto> productos= new List<Producto>();
          
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
                 SqlCommand comando = new SqlCommand("SELECT * FROM Producto", conn);
                 conn.Open();
@@ -47,7 +47,7 @@ namespace Proyecto_Final_Coder2023
         {
             Producto producto = new Producto();
 
-            using (SqlConnection conn = new SqlConnection())
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
             {
                 SqlCommand comando2 = new SqlCommand($"SELECT * FROM Producto WHERE Descripciones = '{descripciones}'", conn);
 
@@ -59,7 +59,7 @@ namespace Proyecto_Final_Coder2023
 
                 if (reader.HasRows)
                 {
-                    reader.Read()
+                    reader.Read();
 
                     producto.Id = reader.GetInt64(0);
                     producto.Desccripciones = reader.GetString(1);

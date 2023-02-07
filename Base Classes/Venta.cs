@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace Proyecto_Final_Coder2023
+namespace Proyecto_Final_Coder2023.Models
 {
     public class Venta
     {

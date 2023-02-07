@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace Proyecto_Final_Coder2023.Managers
+namespace Proyecto_Final_Coder2023.Data
 {
     public class DBConnection
     {

@@ -43,12 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ProductoManager.cs" />
-    <Compile Include="ProductoVenta.cs" />
+    <Compile Include="DB\DBConnection.cs" />
+    <Compile Include="Managers\ProductManager.cs" />
+    <Compile Include="Base Classes\ProductoVenta.cs" />
+    <Compile Include="Managers\ProductSaleManager.cs" />
+    <Compile Include="Managers\SaleManager.cs" />
+    <Compile Include="Managers\UserManager.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Usuario.cs" />
-    <Compile Include="Venta.cs" />
-    <Compile Include="Producto.cs" />
+    <Compile Include="Base Classes\Usuario.cs" />
+    <Compile Include="Base Classes\Venta.cs" />
+    <Compile Include="Base Classes\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -89,5 +89,70 @@ namespace Proyecto_Final_Coder2023
                 return comando.ExecuteNonQuery();
             }
         }
+
+        public static List<Producto> ObtenerProductosvendidos(long idUsuario)
+        {
+            List<long> idProductos = new List<long>();
+
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            {
+                SqlCommand comando2 = new SqlCommand("SELECT IdProducto FROM Venta " + "INNER JOIN ProductoVendido " + "ON Venta.Id = ProductoVendido.IdVenta" + " WHERE IdUsuario = @idUsuario", conn);
+
+                comando2.Parameters.AddWithValue("idUsuario", idUsuario);
+
+                conn.Open();
+
+                SqlDataReader reader = comando2.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while(reader.Read())
+                    {
+                        idProductos.Add(reader.GetInt64(0));
+                    }
+                }
+
+                List <Producto> productos = new List<Producto>();
+
+                foreach (var id in idProductos)
+                {
+                    Producto prodTemp = ObtenerProductos(id);
+                    productos.Add (prodTemp);
+                }
+
+                return productos;
+            }
+        }
+
+        public static Producto ObtenerProductos(long id)
+        {
+            Producto producto = new Producto();
+
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            {
+                SqlCommand comando2 = new SqlCommand($"SELECT * FROM Producto WHERE Id = @id", conn);
+
+                comando2.Parameters.AddWithValue("@id", id);
+
+                conn.Open();
+
+                SqlDataReader reader = comando2.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    reader.Read();
+
+                    producto.Id = reader.GetInt64(0);
+                    producto.Desccripciones = reader.GetString(1);
+                    producto.Costo = reader.GetDecimal(2);
+                    producto.PrecioVenta = reader.GetDecimal(3);
+                    producto.Stock = reader.GetInt32(4);
+                    producto.IdUsuario = reader.GetInt64(5);
+                }
+
+                return producto;
+            }
+        }
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace Proyecto_Final_Coder2023.Managers
                 conn.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
+
                 if (reader.HasRows)
                 {
                     while (reader.Read())

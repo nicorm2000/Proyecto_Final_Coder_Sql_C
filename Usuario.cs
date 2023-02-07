@@ -7,8 +7,13 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Final_Coder2023
 {
-    internal class Usuario
+    public class Usuario
     {
-        SqlConnection conn = new SqlConnection();
+        public long Id { get; set; }
+        public string Nombre { get; set; }
+        public string Apellido { get; set; }
+        public string NombreUsuario { get; set; }
+        public string Contrasena { get; set; }
+        public string Mail { get; set; }
     }
 }

@@ -7,8 +7,11 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Final_Coder2023
 {
-    internal class ProductoVenta
+    public class ProductoVenta
     {
-        SqlConnection conn = new SqlConnection();
+        public int Id { get; set; }
+        public int Stock { get; set; }
+        public int IdProducto { get; set; }
+        public int IdVenta { get; set; }
     }
 }

@@ -62,7 +62,7 @@ namespace Proyecto_Final_Coder2023
                     reader.Read();
 
                     producto.Id = reader.GetInt64(0);
-                    producto.Desccripciones = reader.GetString(1);
+                    producto.Descripciones = reader.GetString(1);
                     producto.Costo = reader.GetDecimal(2);
                     producto.PrecioVenta = reader.GetDecimal(3);
                     producto.Stock = reader.GetInt32(4);
@@ -143,7 +143,7 @@ namespace Proyecto_Final_Coder2023
                     reader.Read();
 
                     producto.Id = reader.GetInt64(0);
-                    producto.Desccripciones = reader.GetString(1);
+                    producto.Descripciones = reader.GetString(1);
                     producto.Costo = reader.GetDecimal(2);
                     producto.PrecioVenta = reader.GetDecimal(3);
                     producto.Stock = reader.GetInt32(4);
@@ -153,6 +153,19 @@ namespace Proyecto_Final_Coder2023
                 return producto;
             }
         }
+
+        public static int DeleteProducto(long id)
+        {
+            using (SqlConnection conn = new SqlConnection(cadenaConexion))
+            {
+                SqlCommand comando2 = new SqlCommand("DELETE FROM Producto" + " WHERE id = @id", conn);
+
+                comando2.Parameters.AddWithValue("id", id);
+
+                conn.Open();
+
+                return comando2.ExecuteNonQuery();
+            }
         }
     }
 }

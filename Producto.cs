@@ -7,13 +7,13 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Final_Coder2023
 {
-    internal class Producto
+    public class Producto
     {
-        private long Id { get; set;  }
-        private string Descripciones { get; set; }
-        private decimal Costo { get; set; }
-        private decimal PrecioVenta { get; set; }
-        private int Stock { get; set; }
-        private decimal IdUsuario { get; set; }
+        public long Id { get; set; }
+        public string Descripciones { get; set; }
+        public decimal Costo { get; set; }
+        public decimal PrecioVenta { get; set; }
+        public int Stock { get; set; }
+        public long IdUsuario { get; set; }
     }
 }

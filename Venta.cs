@@ -7,10 +7,10 @@ using System.Data.SqlClient;
 
 namespace Proyecto_Final_Coder2023
 {
-    internal class Venta
+    public class Venta
     {
-        public static String cadenaConexion = "Data Source=DESKTOP-PKSDVOQ;Initial Catalog=SistemaGestion;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-
-        SqlConnection conn = new SqlConnection(cadenaConexion);
+        public long Id { get; set; }
+        public string Comentario { get; set; }
+        public long IdUsuario { get; set; }
     }
 }

@@ -31,7 +31,7 @@ namespace Proyecto_Final_Coder2023
             }
 
             Producto producto2 = ProductoManager.ObtenerProductos(1);
-            Console.WriteLine(Descripciones);
+            Console.WriteLine(producto1.Descripciones);
 
         }
     }

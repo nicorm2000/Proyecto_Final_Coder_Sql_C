@@ -13,14 +13,42 @@ public class Program
         ProductSaleManager productSaleManager = new ProductSaleManager();
         ProductManager productManager = new ProductManager();
 
-        Usuario login = userManager.Login("tcasazza", "SoyTobiasCasazza");
         List<Usuario> allusers = userManager.GetUsers();
+        
         Usuario oneuser = userManager.GetUserById(1);
 
-        List<Venta> sales = saleManager.GetSalesById(1);
-        List<Producto> productsales = productSaleManager.GetProductSales(1);
+        Console.WriteLine(oneuser);
+
         List<Producto> products = productManager.GetProducts(1);
 
-        Console.ReadLine();
+        foreach (var product in products)
+        {
+            Console.WriteLine(product.Descripciones);
+        }
+
+        List<Producto> productsales = productSaleManager.GetProductSales(1);
+        
+        foreach (var product in productsales)
+        {
+            Console.WriteLine(product.Descripciones);
+        }
+
+        List<Venta> sales = saleManager.GetSalesById(1);
+
+        foreach (var sale in sales)
+        {
+            Console.WriteLine($"Venta {sale.Id}, realizada por usuario: {sale.IdUsuario}");
+        }
+
+        Usuario login = userManager.Login("eperez", "SoyErnestoPerez");
+
+        if (login.Username != null)
+        {
+            Console.WriteLine($"Bienvenido {login.Username}");
+        }
+        else
+        {
+            Console.WriteLine("El ingreso no fue realizado");
+        }
     }
 }

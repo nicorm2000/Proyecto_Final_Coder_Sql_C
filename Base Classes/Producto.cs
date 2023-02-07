@@ -2,11 +2,18 @@
 {
     public class Producto
     {
-        public long Id { get; set; }
-        public string Descripciones { get; set; }
-        public decimal Costo { get; set; }
-        public decimal PrecioVenta { get; set; }
-        public int Stock { get; set; }
-        public long IdUsuario { get; set; }
+        private long id;
+        private string descripciones;
+        private decimal costo;
+        private decimal precioVenta;
+        private int stock;
+        private long idUsuario;
+
+        public long Id { get => id; set => id = value; }
+        public string Descripciones { get => descripciones; set => descripciones = value; }
+        public decimal Costo { get => costo; set => costo = value; }
+        public decimal PrecioVenta { get => precioVenta; set => precioVenta = value; }
+        public int Stock { get => stock; set => stock = value; }
+        public long IdUsuario { get => idUsuario; set => idUsuario = value; }
     }
 }

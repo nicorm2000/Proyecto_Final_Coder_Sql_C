@@ -32,9 +32,9 @@ namespace Proyecto_Final_Coder2023.Managers
                         UsuarioTemporal.Id = reader.GetInt64(0);
                         UsuarioTemporal.Nombre = reader.GetString(1);
                         UsuarioTemporal.Apellido = reader.GetString(2);
-                        UsuarioTemporal.NombreUsuario = reader.GetString(3);
+                        UsuarioTemporal.Username = reader.GetString(3);
                         UsuarioTemporal.Contrasena = reader.GetString(4);
-                        UsuarioTemporal.Mail = reader.GetString(5);
+                        UsuarioTemporal.Email = reader.GetString(5);
 
                         usuarios.Add(UsuarioTemporal);
                     }
@@ -74,9 +74,9 @@ namespace Proyecto_Final_Coder2023.Managers
                     UsuarioTemporal.Id = reader.GetInt64(0);
                     UsuarioTemporal.Nombre = reader.GetString(1);
                     UsuarioTemporal.Apellido = reader.GetString(2);
-                    UsuarioTemporal.NombreUsuario = reader.GetString(3);
+                    UsuarioTemporal.Username = reader.GetString(3);
                     UsuarioTemporal.Contrasena = reader.GetString(4);
-                    UsuarioTemporal.Mail = reader.GetString(5);
+                    UsuarioTemporal.Email = reader.GetString(5);
                 }
                 return UsuarioTemporal;
             }
@@ -114,9 +114,9 @@ namespace Proyecto_Final_Coder2023.Managers
                     UsuarioTemporal.Id = reader.GetInt64(0);
                     UsuarioTemporal.Nombre = reader.GetString(1);
                     UsuarioTemporal.Apellido = reader.GetString(2);
-                    UsuarioTemporal.NombreUsuario = reader.GetString(3);
+                    UsuarioTemporal.Username = reader.GetString(3);
                     UsuarioTemporal.Contrasena = reader.GetString(4);
-                    UsuarioTemporal.Mail = reader.GetString(5);
+                    UsuarioTemporal.Email = reader.GetString(5);
                 }
                 return UsuarioTemporal;
             }

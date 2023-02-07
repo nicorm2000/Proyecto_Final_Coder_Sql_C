@@ -31,7 +31,7 @@ namespace Proyecto_Final_Coder2023.Managers
                         Venta VentaTemporal = new Venta();
 
                         VentaTemporal.Id = reader.GetInt64(0);
-                        VentaTemporal.Comentario = reader.GetString(1);
+                        VentaTemporal.Comentarios = reader.GetString(1);
                         VentaTemporal.IdUsuario = reader.GetInt64(2);
 
                         venta.Add(VentaTemporal);

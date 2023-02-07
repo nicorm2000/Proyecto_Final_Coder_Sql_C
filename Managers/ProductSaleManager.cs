@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
+using Proyecto_Final_Coder2023.Data;
+using Proyecto_Final_Coder2023.Models;
 
 namespace Proyecto_Final_Coder2023.Managers
 {
